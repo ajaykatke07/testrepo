@@ -7,7 +7,7 @@ name: Java CI with Maven
 on:
   push:
     branches:
-      - Ajcurlpolicy
+      - main
 
 jobs:
   build:
