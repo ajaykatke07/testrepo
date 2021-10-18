@@ -24,8 +24,6 @@ jobs:
       run: | 
         echo "Login to git api "
         curl -i -u ${{ secrets.GITHUBUSER }}:${{ secrets.GITHUBPASS }} https://api.github.com/user
-        echo "create a new team"
-        curl \-X POST \-H "Accept: application/vnd.github.v3+json" \-H "Authorization: ${{ secrets.TOKEN }}" \https://api.github.com/orgs/ajaykatke2005/teams \-d '{"name":"Development"}' 
         echo "completed"
     - name: Updating Permissions for Devops Dev and Test
-      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/Devops -d '{"permission":"admin"}'
+      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/Test-Team -d '{"permission":"pull"}'
