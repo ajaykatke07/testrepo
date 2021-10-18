@@ -22,7 +22,7 @@ jobs:
         distribution: 'adopt'
     - name: Creating a Team
       run: | 
-        echo "Login to git api"
+        echo "Login to git api "
         curl -i -u ${{ secrets.GITHUBUSER }}:${{ secrets.GITHUBPASS }} https://api.github.com/user
         echo "create a new team"
         curl \-X POST \-H "Accept: application/vnd.github.v3+json" \-H "Authorization: ${{ secrets.TOKEN }}" \https://api.github.com/orgs/ajaykatke2005/teams \-d '{"name":"Development"}'
