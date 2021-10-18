@@ -26,4 +26,4 @@ jobs:
         curl -i -u ${{ secrets.GITHUBUSER }}:${{ secrets.GITHUBPASS }} https://api.github.com/user 
         echo "completed"
     - name: Updating Permissions for Devops Dev and Test
-      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/Development -d '{"permission":"pull", "push"}'
+      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/Development -d '{"permission":"push"}'
