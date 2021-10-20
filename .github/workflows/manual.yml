@@ -31,7 +31,7 @@ jobs:
       
       run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/Devops -d '{"permission":"admin"}'
     - name: Updating Permissions for Dev 
-      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/dev -d '{"permission":"push"}'
+      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/Developement -d '{"permission":"push"}'
     - name: Updating Permissions for Test
       run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/test -d '{"permission":"pull"}'
       
