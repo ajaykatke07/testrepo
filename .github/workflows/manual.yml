@@ -8,6 +8,13 @@ on:
   push:
     branches:
       - main
+      
+env:
+   TEAM_ROLE1: Devops
+   TEAM_ROLE2: Devopment
+   TEAM_ROLE3: test
+    
+      
 
 jobs:
   build:
@@ -29,9 +36,9 @@ jobs:
         echo "completed"
     - name: Updating Permissions for Devops 
       
-      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/Devops -d '{"permission":"admin"}'
+      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/$TEAM_ROLE1 -d '{"permission":"admin"}'
     - name: Updating Permissions for Devlopment 
-      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/Development -d '{"permission":"push"}'
+      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/$TEAM_ROLE2 -d '{"permission":"push"}'
     - name: Updating Permissions for Test
-      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/test -d '{"permission":"pull"}'
+      run: curl -X PATCH -H "Accept:application/vnd.github.v3+json" -H "Authorization:${{ secrets.TOKEN }}" https://api.github.com/orgs/ajaykatke2005/teams/$TEAM_ROLE3 -d '{"permission":"pull"}'
       
