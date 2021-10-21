@@ -11,7 +11,7 @@ on:
       
 env:
    TEAM_ROLE1: Devops
-   TEAM_ROLE2: Devopment
+   TEAM_ROLE2: Development
    TEAM_ROLE3: test
     
       
